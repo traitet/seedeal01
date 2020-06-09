@@ -2,8 +2,10 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
+import 'package:seedeal01/screens/AddTravellerPage.dart';
 import 'package:seedeal01/screens/EditPaymentMethodPage.dart';
 import 'package:seedeal01/screens/ManageBookingPage.dart';
+import 'package:seedeal01/screens/MyBookingPage.dart';
 import 'package:seedeal01/screens/loginPage.dart';
 
 //==========================================================================
@@ -32,6 +34,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    ),
+
       ),
 //==========================================================================
 // HOME
@@ -85,7 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
 //==========================================================================
 // RAISED BUTTON
-//==========================================================================  
+//========================================================================== 
+             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => AddTravellerPage()),);}, child: Text('Add Traveller'),), 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}, child: Text('My Booking'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => EditPaymentMethodPage()),);}, child: Text('Edit Payment Method'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);}, child: Text('Login'),),                      
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ManageBookingPage()),);}, child: Text('Manage Booking'),),    
