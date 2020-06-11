@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:seedeal01/screens/AddTravellerPage.dart';
 import 'package:seedeal01/screens/EditPaymentMethodPage.dart';
 import 'package:seedeal01/screens/ManageBookingPage.dart';
+import 'package:seedeal01/screens/MenuPage.dart';
 import 'package:seedeal01/screens/MyBookingPage.dart';
 import 'package:seedeal01/screens/MyProfilePage.dart';
+import 'package:seedeal01/screens/TravelBudiesPage.dart';
 import 'package:seedeal01/screens/loginPage.dart';
 
 //==========================================================================
@@ -95,6 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
 //==========================================================================
 // RAISED BUTTON
 //========================================================================== 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}, child: Text('Search Deal'),),               
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Side Menu'),),   
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => TravelBuddiesPage()),);}, child: Text('Travel Budies'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}, child: Text('My Profile'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => AddTravellerPage()),);}, child: Text('Add Traveller'),), 
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}, child: Text('My Booking'),),   
