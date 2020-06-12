@@ -2,6 +2,7 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/widgets/NavDrawerWidget.dart';
 
 //==========================================================================
@@ -18,7 +19,12 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);    
     return MaterialApp(
+//==========================================================================
+// SHOW DEBUG
+//==========================================================================      
+      debugShowCheckedModeBanner: false,         
 //==========================================================================
 // THEME
 //==========================================================================
@@ -30,7 +36,7 @@ class _MenuPageState extends State<MenuPage> {
 //==========================================================================
       home: Scaffold(
         primary: true,
-        backgroundColor: Colors.black,
+        // backgroundColor: Colors.black,
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -42,6 +48,7 @@ class _MenuPageState extends State<MenuPage> {
 // BODY
 //==========================================================================
         body: Scaffold(
+          backgroundColor: Colors.black,          
           appBar: AppBar(
             title: Text('www.lastminute.com'),
             actions: <Widget>[

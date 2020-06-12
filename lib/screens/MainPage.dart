@@ -1,19 +1,40 @@
+//==========================================================================
+// IMPORT
+//========================================================================== 
 import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/SearchFlightHotelPage.dart';
 
+//==========================================================================
+// MAIN CLASS
+//========================================================================== 
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
 
+//==========================================================================
+// STATE CLASS
+//========================================================================== 
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);    
     return MaterialApp(
+//==========================================================================
+// SHOW DEBUG
+//==========================================================================      
+      debugShowCheckedModeBanner: false,     
+//==========================================================================
+// HOME
+//==========================================================================        
       home: Scaffold(
         appBar: AppBar(
           title: Text('Main Menu'),
         ),
+//==========================================================================
+// BODY
+//==========================================================================         
         body: ListView(
           children: <Widget>[
             buildBuildBody1(),
@@ -29,10 +50,9 @@ class _MainPageState extends State<MainPage> {
   }
   
 
-//================================================================
+//==========================================================================
 // MAIN MENU
-//================================================================
-
+//========================================================================== 
   buildBuildBody1() => Container(
     height: 100,
     color: Colors.pink,

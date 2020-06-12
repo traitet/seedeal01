@@ -21,8 +21,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     const padding = 15.0;
-    FlutterStatusbarcolor.setStatusBarColor(Colors.black);
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);
     return MaterialApp(
+//==========================================================================
+// SHOW DEBUG
+//==========================================================================      
+      debugShowCheckedModeBanner: false,      
 //==========================================================================
 // THEME
 //==========================================================================

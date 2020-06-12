@@ -18,8 +18,12 @@ class MyProfilePage extends StatefulWidget {
 class _MyProfilePageState extends State<MyProfilePage> {
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarColor(Colors.black);
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);
     return MaterialApp(
+//==========================================================================
+// SHOW DEBUG
+//==========================================================================      
+      debugShowCheckedModeBanner: false,         
 //==========================================================================
 // THEME
 //==========================================================================
@@ -65,10 +69,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
           child: Center(
             child: ListView(
               children: <Widget>[
-
-
-
-                
                 Row(
                   children: <Widget>[
 //==========================================================================

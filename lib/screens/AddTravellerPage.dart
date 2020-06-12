@@ -2,6 +2,7 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:seedeal01/widgets/TextFieldWidget.dart';
 
@@ -21,7 +22,12 @@ class _AddTravellerPageState extends State<AddTravellerPage> {
   Widget build(BuildContext context) {
     const padding = 15.0;
     const paddingTop = 20.0;
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);    
     return MaterialApp(
+//==========================================================================
+// SHOW DEBUG
+//==========================================================================      
+      debugShowCheckedModeBanner: false,
 //==========================================================================
 // THEME
 //==========================================================================
