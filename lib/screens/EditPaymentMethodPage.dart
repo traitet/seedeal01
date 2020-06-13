@@ -62,7 +62,7 @@ class _EditPaymentMethodPageState extends State<EditPaymentMethodPage> {
 //==========================================================================
                 TextFieldWidget(text: '*Card Type', icon: Icons.credit_card),
                 TextFieldWidget(text: '*Card Number', icon: Icons.format_list_numbered),
-                TextFieldWidget(text: '*Expiration Date', icon: Icons.data_usage),                
+                TextFieldWidget(text: '*Expiration Date', icon: Icons.timer),                
                 SizedBox(height: padding),
 //==========================================================================
 // SIGN-IN BUTTON

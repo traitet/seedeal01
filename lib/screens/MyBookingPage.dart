@@ -52,7 +52,7 @@ class _MyBookingPageState extends State<MyBookingPage> {
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.business_center),
               title: Text('Booking'),
             ),
             BottomNavigationBarItem(

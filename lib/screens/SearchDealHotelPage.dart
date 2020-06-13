@@ -4,21 +4,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
-import 'package:seedeal01/widgets/DatePickerWidget.dart';
+// import 'package:seedeal01/widgets/DatePickerWidget.dart';
 import 'package:seedeal01/widgets/DropdownBarWidget.dart';
 
 //==========================================================================
 // MAIN CLASS
 //==========================================================================
-class SearchDealPage extends StatefulWidget {
+class SearchDealHotelPage extends StatefulWidget {
   @override
-  _SearchDealPageState createState() => _SearchDealPageState();
+  _SearchDealHotelPageState createState() => _SearchDealHotelPageState();
 }
 
 //==========================================================================
 // STATE CLASS
 //==========================================================================
-class _SearchDealPageState extends State<SearchDealPage> {
+class _SearchDealHotelPageState extends State<SearchDealHotelPage> {
   @override
   Widget build(BuildContext context) {
     // const padding = 15.0;
@@ -42,14 +42,14 @@ class _SearchDealPageState extends State<SearchDealPage> {
 //==========================================================================
 // NUMBER OF TAB
 //==========================================================================
-        
+
         length: choices.length,
         child: Scaffold(
 //==========================================================================
 //APPBAR
 //==========================================================================
           appBar: AppBar(
-            title: Text('Search Top Deal: Train'),
+            title: Text('Search Top Deal: Hotel'),
 //==========================================================================
 // APPBAR: BOTTOM
 //==========================================================================
@@ -94,8 +94,9 @@ class Choice {
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: 'Flight + Hotel', icon: Icons.hotel),
+  const Choice(title: 'Flight + Hotel', icon: Icons.flight),
   const Choice(title: 'Train', icon: Icons.train),
+  const Choice(title: 'Hotel', icon: Icons.hotel),
 ];
 
 //==========================================================================
@@ -110,7 +111,7 @@ class ChoiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final TextStyle textStyle1 = Theme.of(context).textTheme.bodyText1;
-    final textStyle1 = TextStyle(color: Colors.white,fontSize: 16);
+    // final textStyle1 = TextStyle(color: Colors.white, fontSize: 16);
 //==========================================================================
 // CARD
 //==========================================================================
@@ -122,93 +123,91 @@ class ChoiceCard extends StatelessWidget {
         Container(
             padding: EdgeInsets.all(10),
             alignment: Alignment.topLeft,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            height: 500,
+            width: double.infinity,
+            child: ListView(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-//==========================================================================
-// RADIO: RETURN/ONEWAY
-//==========================================================================
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text('Train + Hotel', style: textStyle1),
-                    SizedBox(width: 10),
-                    Container(decoration: BoxDecoration(border: Border.all(color: Colors.grey)),child: FlatButton(onPressed: (){}, child: Text('Return',style: textStyle1,))),
-                    Container(decoration: BoxDecoration(border: Border.all(color: Colors.grey)),child: FlatButton(onPressed: (){}, child: Text('Oneway',style: textStyle1,))),              
-                  ],
-                ),
-                
-//==========================================================================
-// DROPDOWN: FROM
-//==========================================================================
-                Text('From', style: textStyle1),
-                DropdownBarWidget(hintIcon: Icons.tram, hintText: 'From'),
-                SizedBox(height: 4),
-//==========================================================================
-// DROPDOWN: TO
-//==========================================================================
-                Text('To', style: textStyle1),
-                DropdownBarWidget(hintIcon: Icons.tram, hintText: 'To'),
+
+
+
+
 //==========================================================================
 // DATAPICKER WIDGET
-//==========================================================================  
-              
+//==========================================================================
+                DropdownBarWidget(
+                    hintIcon: Icons.location_city,
+                    hintText: 'London, United Kingdom',
+                    dropdownColor: Colors.white),
+//==========================================================================
+// GRIDVIEW
+//==========================================================================
                 Container(
-                  child: Row(
+                  padding: const EdgeInsets.only(top: 8, bottom: 8),                  
+                  height: 120,
+                  child: GridView.count(
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 5,
+                    crossAxisCount: 2,
                     children: <Widget>[
-                      Expanded(flex:1,child: DatePickerWidget()),
-                      DatePickerWidget(),   
+                      cardBuild(context, 'Check-in', 'Tonight'),
+                      cardBuild(context, 'Check-out', 'Tomorrow'),
                     ],
                   ),
-                ),
-              
-
-
+                ),                    
 //==========================================================================
-// DROPDOWN: NO GUESTS 
+// DROPDOWN: NO GUESTS
 //==========================================================================
-                DropdownBarWidget(hintIcon: Icons.person,hintText: '2 adults, 1 room',dropdownColor: Colors.grey),
-//==========================================================================
-// DROPDOWN: CLASS
-//==========================================================================                
-                DropdownBarWidget(hintIcon: Icons.airline_seat_recline_normal,hintText: 'any class',dropdownColor: Colors.grey),
-                SizedBox(height: 16),
+                DropdownBarWidget(
+                    hintIcon: Icons.person,
+                    hintText: '2 adults, 1 room',
+                    dropdownColor: Colors.white),
 //==========================================================================
 // EXPANDED
 //==========================================================================
-        //Expanded(child: Container()),                
+                //Expanded(child: Container()),
 //==========================================================================
 // BUTTON
 //==========================================================================
-        SizedBox(
-          width: double.infinity,
-          child: ButtonBarWidget(
-            onPressed: () {},
-            splashColor: Colors.pink,
-            text: "Find",
-          ),
-        )                
+                SizedBox(height: 8),
+                SizedBox(
+                  width: double.infinity,
+                  child: ButtonBarWidget(
+                    onPressed: () {},
+                    splashColor: Colors.pink,
+                    text: "Find",
+                  ),
+                )
               ],
             )),
-
-
       ],
     );
-
-    // Card(
-    //   color: Colors.white,
-    //   child: Center(
-    //     child: Column(
-    //       mainAxisSize: MainAxisSize.min,
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       crossAxisAlignment: CrossAxisAlignment.center,
-    //       children: <Widget>[
-    //         Icon(choice.icon, size: 128.0, color: textStyle.color),
-    //         Text(choice.title, style: textStyle),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
+
+//==========================================================================
+// CARD
+//==========================================================================
+  Card cardBuild(BuildContext context, String title, String subTitle) => Card(
+        // elevation: 1,
+        margin: EdgeInsets.only(top: 4, bottom: 4),
+        child: Container(
+          decoration: BoxDecoration(color: Colors.white),
+          child: InkWell(
+            onTap: () {},
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,              
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                SizedBox(height: 16),                
+                Text(title,style: TextStyle(fontSize: 24, color: Colors.pink),),
+                SizedBox(height: 16),
+                Text(subTitle,style: TextStyle(fontSize: 16, color: Colors.grey),),
+              ],
+            ),
+          ),
+        ),
+      );
 }

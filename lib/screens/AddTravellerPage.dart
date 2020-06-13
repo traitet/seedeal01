@@ -21,12 +21,12 @@ class _AddTravellerPageState extends State<AddTravellerPage> {
   @override
   Widget build(BuildContext context) {
     const padding = 15.0;
-    const paddingTop = 20.0;
-    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);    
+    const paddingTop = 5.0;
+    FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);
     return MaterialApp(
 //==========================================================================
 // SHOW DEBUG
-//==========================================================================      
+//==========================================================================
       debugShowCheckedModeBanner: false,
 //==========================================================================
 // THEME
@@ -64,12 +64,9 @@ class _AddTravellerPageState extends State<AddTravellerPage> {
                 Text('Personal Details',
                     style:
                         TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-                TextFieldWidget(text: '*Name', icon: Icons.credit_card),
-                TextFieldWidget(
-                    text: '*Surname', icon: Icons.format_list_numbered),
-
-                TextFieldWidget(
-                    text: '*Expiration Datess', icon: Icons.data_usage),
+                TextFieldWidget(text: '*Name', icon: Icons.account_box),
+                TextFieldWidget(text: '*Surname', icon: Icons.account_circle),
+                TextFieldWidget(text: '*Expiration Dates', icon: Icons.timer),
 //==========================================================================
 // RADIO: GENDER
 //==========================================================================
@@ -77,11 +74,7 @@ class _AddTravellerPageState extends State<AddTravellerPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text('Male'),
-                    Radio(
-                      value: 1,
-                      groupValue: 0,
-                      onChanged: null,
-                    ),
+                    Radio(value: 1, groupValue: 0, onChanged: null),
                     Text('Female'),
                     Radio(
                       value: 2,
@@ -104,7 +97,7 @@ class _AddTravellerPageState extends State<AddTravellerPage> {
 // TEXTFIELD
 //==========================================================================
                 TextFieldWidget(text: '*E-mail', icon: Icons.email),
-                TextFieldWidget(text: '*Tel', icon: Icons.phone),
+                TextFieldWidget(text: '*Mobile', icon: Icons.phone),
 //==========================================================================
 // TEXT
 //==========================================================================

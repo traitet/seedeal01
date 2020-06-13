@@ -9,6 +9,8 @@ import 'package:seedeal01/screens/MenuPage.dart';
 import 'package:seedeal01/screens/MyBookingPage.dart';
 import 'package:seedeal01/screens/MyProfilePage.dart';
 import 'package:seedeal01/screens/SampleTabbarPage.dart';
+import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
+import 'package:seedeal01/screens/SearchDealHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealPage.dart';
 import 'package:seedeal01/screens/TravelBudiesPage.dart';
 import 'package:seedeal01/screens/loginPage.dart';
@@ -103,8 +105,10 @@ class _MyHomePageState extends State<MyHomePage> {
 //==========================================================================
 // RAISED BUTTON
 //========================================================================== 
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SampleTabbarPage()),);}, child: Text('Sample Tab bar Page'),),       
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}, child: Text('Search Deal'),),               
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SampleTabbarPage()),);}, child: Text('Sample Tab bar Page'),),  
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}, child: Text('Search Deal: Hotel'),),                  
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}, child: Text('Search Deal: Flight + Hotel'),),                    
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}, child: Text('Search Deal: Train'),),               
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Side Menu'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => TravelBuddiesPage()),);}, child: Text('Travel Budies'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}, child: Text('My Profile'),),   

@@ -7,18 +7,19 @@ import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:seedeal01/widgets/DatePickerWidget.dart';
 import 'package:seedeal01/widgets/DropdownBarWidget.dart';
 
+
 //==========================================================================
 // MAIN CLASS
 //==========================================================================
-class SearchDealPage extends StatefulWidget {
+class SearchDealFlightHotelPage extends StatefulWidget {
   @override
-  _SearchDealPageState createState() => _SearchDealPageState();
+  _SearchDealFlightHotelPageState createState() => _SearchDealFlightHotelPageState();
 }
 
 //==========================================================================
 // STATE CLASS
 //==========================================================================
-class _SearchDealPageState extends State<SearchDealPage> {
+class _SearchDealFlightHotelPageState extends State<SearchDealFlightHotelPage> {
   @override
   Widget build(BuildContext context) {
     // const padding = 15.0;
@@ -42,14 +43,14 @@ class _SearchDealPageState extends State<SearchDealPage> {
 //==========================================================================
 // NUMBER OF TAB
 //==========================================================================
-        
+
         length: choices.length,
         child: Scaffold(
 //==========================================================================
 //APPBAR
 //==========================================================================
           appBar: AppBar(
-            title: Text('Search Top Deal: Train'),
+            title: Text('Search Top Deal: Flight + Hotel'),
 //==========================================================================
 // APPBAR: BOTTOM
 //==========================================================================
@@ -126,18 +127,7 @@ class ChoiceCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-//==========================================================================
-// RADIO: RETURN/ONEWAY
-//==========================================================================
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text('Train + Hotel', style: textStyle1),
-                    SizedBox(width: 10),
-                    Container(decoration: BoxDecoration(border: Border.all(color: Colors.grey)),child: FlatButton(onPressed: (){}, child: Text('Return',style: textStyle1,))),
-                    Container(decoration: BoxDecoration(border: Border.all(color: Colors.grey)),child: FlatButton(onPressed: (){}, child: Text('Oneway',style: textStyle1,))),              
-                  ],
-                ),
+
                 
 //==========================================================================
 // DROPDOWN: FROM

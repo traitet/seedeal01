@@ -50,7 +50,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.business_center),
               title: Text('Booking'),
             ),
             BottomNavigationBarItem(
@@ -75,8 +75,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
 // IMAGE
 //==========================================================================
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: 80,
+                      height: 80,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
@@ -110,15 +110,15 @@ class _MyProfilePageState extends State<MyProfilePage> {
 //==========================================================================
     Text('My Preferences',style: TextStyle(fontSize: 16,color: Colors.black, fontWeight: FontWeight.bold)),
     SizedBox(height: 5),    
-    ListTile(trailing: Icon(Icons.flight),title: Text('Payment Method'),),  
-    ListTile(trailing: Icon(Icons.card_travel),title: Text('Travel Buddy'),),   
+    ListTile(trailing: Icon(Icons.credit_card),title: Text('Payment Method'),),  
+    ListTile(trailing: Icon(Icons.people),title: Text('Travel Buddy'),),   
     SizedBox(height: 15),   
 //==========================================================================
 // LIST TILE & TEXT: ACCOUNT SETTING
 //==========================================================================              
     Text('Account Settings',style: TextStyle(fontSize: 16,color: Colors.black, fontWeight: FontWeight.bold)),     
     SizedBox(height: 5),        
-    ListTile(trailing: Icon(Icons.person),title: Text('Personal Details & Password'),),  
+    ListTile(trailing: Icon(Icons.chrome_reader_mode),title: Text('Personal Details & Password'),),  
     ListTile(trailing: Icon(Icons.exit_to_app),title: Text('Logout'),),         
     
 
