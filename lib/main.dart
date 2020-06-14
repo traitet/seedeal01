@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:seedeal01/screens/AddTravellerPage.dart';
 import 'package:seedeal01/screens/EditPaymentMethodPage.dart';
+import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/screens/ManageBookingPage.dart';
 import 'package:seedeal01/screens/MenuPage.dart';
 import 'package:seedeal01/screens/MyBookingPage.dart';
@@ -12,8 +13,10 @@ import 'package:seedeal01/screens/SampleTabbarPage.dart';
 import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealPage.dart';
+import 'package:seedeal01/screens/SearchHotelPage.dart';
 import 'package:seedeal01/screens/TravelBudiesPage.dart';
 import 'package:seedeal01/screens/loginPage.dart';
+import 'package:seedeal01/screens/HotelDetailPage.dart';
 
 //==========================================================================
 // MAIN: RUNAPP
@@ -105,6 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
 //==========================================================================
 // RAISED BUTTON
 //========================================================================== 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}, child: Text('Home Page'),),  
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => HotelDetailPage()),);}, child: Text('Hotel Detail'),),  
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchHotelPage()),);}, child: Text('Search Hotel'),),                          
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SampleTabbarPage()),);}, child: Text('Sample Tab bar Page'),),  
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}, child: Text('Search Deal: Hotel'),),                  
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}, child: Text('Search Deal: Flight + Hotel'),),                    

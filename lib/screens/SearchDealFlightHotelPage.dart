@@ -94,6 +94,9 @@ class Choice {
   final IconData icon;
 }
 
+//==========================================================================
+// CLASS CHOICE
+//==========================================================================
 const List<Choice> choices = const <Choice>[
   const Choice(title: 'Flight + Hotel', icon: Icons.hotel),
   const Choice(title: 'Train', icon: Icons.train),
@@ -143,7 +146,6 @@ class ChoiceCard extends StatelessWidget {
 //==========================================================================
 // DATAPICKER WIDGET
 //==========================================================================  
-              
                 Container(
                   child: Row(
                     children: <Widget>[
@@ -153,8 +155,6 @@ class ChoiceCard extends StatelessWidget {
                   ),
                 ),
               
-
-
 //==========================================================================
 // DROPDOWN: NO GUESTS 
 //==========================================================================
@@ -186,19 +186,9 @@ class ChoiceCard extends StatelessWidget {
       ],
     );
 
-    // Card(
-    //   color: Colors.white,
-    //   child: Center(
-    //     child: Column(
-    //       mainAxisSize: MainAxisSize.min,
-    //       mainAxisAlignment: MainAxisAlignment.center,
-    //       crossAxisAlignment: CrossAxisAlignment.center,
-    //       children: <Widget>[
-    //         Icon(choice.icon, size: 128.0, color: textStyle.color),
-    //         Text(choice.title, style: textStyle),
-    //       ],
-    //     ),
-    //   ),
-    // );
+
   }
 }
+
+
+

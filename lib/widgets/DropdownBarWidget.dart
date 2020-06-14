@@ -65,7 +65,7 @@ class _DropdownBarWidgetState extends State<DropdownBarWidget> {
 //==========================================================================
         child: DropdownButton(
             underline: Container(),
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.expand_more),
 //==========================================================================
 // DROPDOWN ITEMS (DATA)
 //==========================================================================
