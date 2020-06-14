@@ -62,13 +62,17 @@ class _SampleTabbarPageState extends State<SampleTabbarPage> {
 //==========================================================================
 // SCAFFOLD: BODY
 //==========================================================================          
-          body: TabBarView(
-            children: choices.map((Choice choice) {
-              return Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ChoiceCard(choice: choice),
-              );
-            }).toList(),
+          body: ListView(
+            children: <Widget>[
+              TabBarView(
+                children: choices.map((Choice choice) {
+                  return Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ChoiceCard(choice: choice),
+                  );
+                }).toList(),
+              ),
+            ],
           ),
         ),
       ),

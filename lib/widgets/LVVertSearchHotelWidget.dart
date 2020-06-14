@@ -10,7 +10,7 @@ class LVVertSearchHotelWidget extends StatelessWidget {
 //==========================================================================
 // CONSTRUCTURE
 //==========================================================================
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
   final String imageAssetName; //CHANGE TO LIST
   final String title;
   final String textDescription;
@@ -18,7 +18,7 @@ class LVVertSearchHotelWidget extends StatelessWidget {
 // GET/SET
 //==========================================================================
   LVVertSearchHotelWidget({
-    this.onPressed,
+    this.onTap,
     this.imageAssetName = '',
     this.title = '',
     this.textDescription = '',
@@ -55,60 +55,63 @@ class LVVertSearchHotelWidget extends StatelessWidget {
   buildCard(String imageAssetName, String title, String textRating, String location,double price) {
     return Container(
       width: 150,
-      child: Card(
-        child: Row(
-          children: <Widget>[
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          child: Row(
+            children: <Widget>[
 //==========================================================================
 // IMAGE
 //==========================================================================
-            Image(height: 100, width: 100, image: AssetImage(imageAssetName)),
+              Image(height: 100, width: 100, image: AssetImage(imageAssetName)),
 //==========================================================================
 // COLUMN
 //==========================================================================
-            Expanded(
-              child: Container(               
-                padding: EdgeInsets.only(left: 8),
-                width: 250,     // need to auto calcuate
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,         
-                  children: <Widget>[
+              Expanded(
+                child: Container(               
+                  padding: EdgeInsets.only(left: 8),
+                  width: 250,     // need to auto calcuate
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,         
+                    children: <Widget>[
 //==========================================================================
 // TEXT RATING
 //==========================================================================                  
-                    Text(textRating,style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.black)),
+                      Text(textRating,style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.black)),
 //==========================================================================
 // TITLE: HOTEL NAME
 //==========================================================================                  
-                    Text(title,
-                      overflow: TextOverflow.visible,maxLines: 2,
-                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.black)),  
+                      Text(title,
+                        overflow: TextOverflow.visible,maxLines: 2,
+                        style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.black)),  
 //==========================================================================
 // STAR
 //==========================================================================                  
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.star,size: 18,color: Colors.orange,),
-                        Icon(Icons.star,size: 18,color: Colors.orange,),
-                        Icon(Icons.star,size: 18,color: Colors.orange,),
-                        Text('HOTEL',style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.black))                                        
-                      ],
-                    ),   
+                      Row(
+                        children: <Widget>[
+                          Icon(Icons.star,size: 18,color: Colors.orange,),
+                          Icon(Icons.star,size: 18,color: Colors.orange,),
+                          Icon(Icons.star,size: 18,color: Colors.orange,),
+                          Text('HOTEL',style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.black))                                        
+                        ],
+                      ),   
 //==========================================================================
 // LOCATION
 //==========================================================================                  
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.location_on,size: 18),
-                        Text(location,style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.black)),                        
-                      ],
-                    ),     
-                                      
-                  ],
+                      Row(
+                        children: <Widget>[
+                          Icon(Icons.location_on,size: 18),
+                          Text(location,style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.black)),                        
+                        ],
+                      ),     
+                                        
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

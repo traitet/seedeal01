@@ -11,7 +11,7 @@ class LVHoriSearchDealWidget extends StatelessWidget {
 //==========================================================================
 // CONSTRUCTURE
 //==========================================================================
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
   final String imageAssetName;    //CHANGE TO LIST
   final String title;
   final String textDescription;
@@ -19,7 +19,7 @@ class LVHoriSearchDealWidget extends StatelessWidget {
 // GET/SET
 //==========================================================================
   LVHoriSearchDealWidget({
-    this.onPressed,
+    this.onTap,
     this.imageAssetName = 'Sign in',
     this.title = '',
     this.textDescription = '',
@@ -56,28 +56,31 @@ class LVHoriSearchDealWidget extends StatelessWidget {
     return Container(
       width:  150,      
       height: 200,
-      child: Card(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Image(
-                    height: 100,
-                    width:  150,
-                    image: AssetImage(imageAssetName)),
-                  Text(title,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),), 
-                  Container(
-                    height: 40,  
-                    child: Text(textDescription,style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.grey),)
-                    
-                  ), 
-                  SizedBox(height: 8),
-                  Text('from',style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.grey),), 
-                  Text(price.toStringAsFixed(0)+'pp',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.pink),),                
-                ],
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Image(
+                      height: 100,
+                      width:  150,
+                      image: AssetImage(imageAssetName)),
+                    Text(title,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),), 
+                    Container(
+                      height: 40,  
+                      child: Text(textDescription,style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.grey),)
+                      
+                    ), 
+                    SizedBox(height: 8),
+                    Text('from',style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal, color: Colors.grey),), 
+                    Text(price.toStringAsFixed(0)+'pp',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.pink),),                
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

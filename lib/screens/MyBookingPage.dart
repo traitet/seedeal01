@@ -2,6 +2,9 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
+import 'package:seedeal01/screens/HomePage.dart';
+import 'package:seedeal01/screens/MainPage.dart';
+import 'package:seedeal01/screens/MyProfilePage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
@@ -43,7 +46,16 @@ class _MyBookingPageState extends State<MyBookingPage> {
 // BUTTOM NAVIGATION BAR
 // www.willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
 //==========================================================================
-        bottomNavigationBar: BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(   
+              onTap: (int index){
+                switch (index) {
+                  case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}break;
+                  case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}break;
+                  case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}break;
+                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);}break;                  
+                  default:
+                }
+              },                
           type: BottomNavigationBarType.fixed,
           currentIndex: 1,
           items: [

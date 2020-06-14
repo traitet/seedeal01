@@ -2,8 +2,14 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
-// import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:seedeal01/screens/HotelDetailPage.dart';
+import 'package:seedeal01/screens/MainPage.dart';
+import 'package:seedeal01/screens/MyBookingPage.dart';
+import 'package:seedeal01/screens/MyProfilePage.dart';
+import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
+import 'package:seedeal01/screens/SearchDealHotelPage.dart';
+import 'package:seedeal01/screens/SearchDealPage.dart';
 import 'package:seedeal01/widgets/LVHoriSearchDealWidget.dart';
 
 //==========================================================================
@@ -21,7 +27,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // const padding = 15.0;
-
     FlutterStatusbarcolor.setStatusBarColor(Theme.of(context).primaryColor);
     return MaterialApp(
 //==========================================================================
@@ -46,11 +51,21 @@ class _HomePageState extends State<HomePage> {
 // www.willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
 //==========================================================================
             bottomNavigationBar: BottomNavigationBar(
+              onTap: (int index){
+                switch (index) {
+                  case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}break;
+                  case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}break;
+                  case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}break;
+                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);}break;                  
+                  default:
+                }
+              },
               type: BottomNavigationBarType.fixed,
               currentIndex: 0,
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.home), title: Text('Home')),
+                    icon: Icon(Icons.home), title: Text('Home')   
+                    ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.business_center),
                   title: Text('Booking'),
@@ -77,8 +92,17 @@ class _HomePageState extends State<HomePage> {
                   height: 80,
                   color: Colors.pink,
                   child: DefaultTabController(
+                    initialIndex: 0,
                     length: choices.length,
                     child: TabBar(
+                    onTap: (int index){
+                      switch (index) {
+                        case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
+                        case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                        case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
+                        default:
+                      }
+                    },                            
                       tabs: choices.map((Choice choice) {
                         return Tab(
                           text: choice.title,
@@ -98,7 +122,7 @@ class _HomePageState extends State<HomePage> {
 //==========================================================================
 // LIST VIEW HORIZONAL
 //==========================================================================   
-      LVHoriSearchDealWidget(), 
+      LVHoriSearchDealWidget(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => HotelDetailPage()),);},), 
 //==========================================================================
 // TOP DEAL
 //==========================================================================
@@ -134,7 +158,7 @@ class Choice {
 // CLASS CHOICE
 //==========================================================================
 const List<Choice> choices = const <Choice>[
-  Choice(title: 'Flight + Hotel', icon: Icons.hotel),
-  Choice(title: 'Hotels', icon: Icons.hotel),
-  Choice(title: 'Flights', icon: Icons.flight),
+  Choice(title: 'Flight + Hotel', icon: Icons.flight),
+  Choice(title: 'Train', icon: Icons.tram),
+  Choice(title: 'Hotel', icon: Icons.hotel),
 ];

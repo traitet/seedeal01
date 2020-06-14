@@ -3,6 +3,7 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
@@ -38,8 +39,6 @@ class _LoginPageState extends State<LoginPage> {
 // HOME
 //==========================================================================
       home: Scaffold(
-        
-
         // appBar: AppBar(
         //   title: Text('Login'),
         // ),
@@ -77,6 +76,7 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
 // FACEBOOK BUTTON
 //==========================================================================                
                 FacebookSignInButton(onPressed: () {
+                  login();
                   // call authentication logic
                 }),
                 SizedBox(height: padding),
@@ -84,7 +84,10 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
 // GOOGLE BUTTON
 //==========================================================================                
                 GoogleSignInButton(
-                  onPressed: () {/* ... */},
+                  onPressed: () {
+                    login();
+                  // call authentication logic
+                  },
                   splashColor: Colors.white,
                   // setting splashColor to Colors.transparent will remove button ripple effect.
                 ),
@@ -93,7 +96,10 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
 // SIGN-IN BUTTON
 //==========================================================================                
                 ButtonBarWidget(
-                  onPressed: () {},
+                  onPressed: () {
+                    login();
+                    // call authentication logic
+                  },
                   splashColor: Colors.pink,
                   text: "Sign in",
                 ),
@@ -126,4 +132,10 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
       ),
     );
   }
+
+//==========================================================================
+// LOGIN FUNCTION
+//==========================================================================   
+login()=> Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()),);
+
 }

@@ -3,6 +3,9 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:seedeal01/screens/HomePage.dart';
+import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
+import 'package:seedeal01/screens/SearchDealHotelPage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:seedeal01/widgets/DatePickerWidget.dart';
 import 'package:seedeal01/widgets/DropdownBarWidget.dart';
@@ -42,18 +45,33 @@ class _SearchDealPageState extends State<SearchDealPage> {
 //==========================================================================
 // NUMBER OF TAB
 //==========================================================================
-        
+        initialIndex: 1,     
         length: choices.length,
         child: Scaffold(
 //==========================================================================
 //APPBAR
 //==========================================================================
           appBar: AppBar(
+              iconTheme: IconThemeData(color: Colors.black),
+              leading: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                  ),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),)),            
             title: Text('Search Top Deal: Train'),
 //==========================================================================
 // APPBAR: BOTTOM
 //==========================================================================
             bottom: TabBar(
+              onTap: (int index){
+                switch (index) {
+                  case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
+                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                  case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
+                  default:
+                }
+              },                
               // isScrollable: true,
               tabs: choices.map((Choice choice) {
                 return Tab(
@@ -94,8 +112,9 @@ class Choice {
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: 'Flight + Hotel', icon: Icons.hotel),
+  const Choice(title: 'Flight + Hotel', icon: Icons.flight),
   const Choice(title: 'Train', icon: Icons.train),
+  const Choice(title: 'Hotel', icon: Icons.hotel),
 ];
 
 //==========================================================================
@@ -114,7 +133,7 @@ class ChoiceCard extends StatelessWidget {
 //==========================================================================
 // CARD
 //==========================================================================
-    return Column(
+    return ListView(
       children: <Widget>[
 //==========================================================================
 // RETURN/ONEWAY

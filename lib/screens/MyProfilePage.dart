@@ -3,6 +3,9 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:seedeal01/screens/HomePage.dart';
+import 'package:seedeal01/screens/MainPage.dart';
+import 'package:seedeal01/screens/MyBookingPage.dart';
 
 //==========================================================================
 // MAIN CLASS
@@ -42,6 +45,15 @@ class _MyProfilePageState extends State<MyProfilePage> {
 // www.willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
 //==========================================================================
         bottomNavigationBar: BottomNavigationBar(
+              onTap: (int index){
+                switch (index) {
+                  case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}break;
+                  case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}break;
+                  case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}break;
+                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);}break;                  
+                  default:
+                }
+              },          
           type: BottomNavigationBarType.fixed,
           currentIndex: 2,
           items: [
@@ -88,17 +100,23 @@ class _MyProfilePageState extends State<MyProfilePage> {
 //==========================================================================
 // COLUMN: TEXTS
 //==========================================================================
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text('Hi there!'),
-                        Text('Traitet Thepbandansuk',
-                            style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.pink,
-                                fontWeight: FontWeight.bold))
-                      ],
+                    Flexible(
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text('Hi there!'),
+                            Text('Traitet Thepbandansuk',
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.pink,
+                                    fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),

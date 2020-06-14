@@ -3,6 +3,7 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:seedeal01/screens/HomePage.dart';
 
 //==========================================================================
 // MAIN CLASS
@@ -32,8 +33,14 @@ class _SearchFlightHotelPageState extends State<SearchFlightHotelPage> {
 //==========================================================================      
       home: Scaffold(
         appBar: AppBar(
+              iconTheme: IconThemeData(color: Colors.black),
+              leading: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                  ),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),)),          
           title: Text('Flight and Hotel'),
-          iconTheme: IconThemeData(color: Colors.black),
         ),
         body: buildBody(),
       ),
