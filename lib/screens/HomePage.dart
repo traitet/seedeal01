@@ -9,7 +9,7 @@ import 'package:seedeal01/screens/MyBookingPage.dart';
 import 'package:seedeal01/screens/MyProfilePage.dart';
 import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealHotelPage.dart';
-import 'package:seedeal01/screens/SearchDealPage.dart';
+import 'package:seedeal01/screens/SearchDealTrainPage.dart';
 import 'package:seedeal01/widgets/LVHoriSearchDealWidget.dart';
 
 //==========================================================================
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: (int index){
                       switch (index) {
                         case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
-                        case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                        case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealTrainPage()),);}break;
                         case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
                         default:
                       }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/screens/SearchDealHotelPage.dart';
-import 'package:seedeal01/screens/SearchDealPage.dart';
+import 'package:seedeal01/screens/SearchDealTrainPage.dart';
 import 'package:seedeal01/screens/SearchHotelPage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:seedeal01/widgets/DatePickerWidget.dart';
@@ -69,7 +69,7 @@ class _SearchDealFlightHotelPageState extends State<SearchDealFlightHotelPage> {
               onTap: (int index){
                 switch (index) {
                   case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
-                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealTrainPage()),);}break;
                   case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
                   default:
                 }
@@ -156,13 +156,13 @@ class ChoiceCard extends StatelessWidget {
 // DROPDOWN: FROM
 //==========================================================================
                 Text('From', style: textStyle1),
-                DropdownBarWidget(hintIcon: Icons.tram, hintText: 'From'),
+                DropdownBarWidget(hintIcon: Icons.flight_takeoff, hintText: 'From'),
                 SizedBox(height: 4),
 //==========================================================================
 // DROPDOWN: TO
 //==========================================================================
                 Text('To', style: textStyle1),
-                DropdownBarWidget(hintIcon: Icons.tram, hintText: 'To'),
+                DropdownBarWidget(hintIcon: Icons.flight_land, hintText: 'To'),
 //==========================================================================
 // DATAPICKER WIDGET
 //==========================================================================  

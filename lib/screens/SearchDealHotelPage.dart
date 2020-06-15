@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
-import 'package:seedeal01/screens/SearchDealPage.dart';
+import 'package:seedeal01/screens/SearchDealTrainPage.dart';
 import 'package:seedeal01/screens/SearchHotelPage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 // import 'package:seedeal01/widgets/DatePickerWidget.dart';
@@ -68,7 +68,7 @@ class _SearchDealHotelPageState extends State<SearchDealHotelPage> {
               onTap: (int index){
                 switch (index) {
                   case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
-                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealTrainPage()),);}break;
                   case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
                   default:
                 }

@@ -36,7 +36,6 @@ class LVVertSearchHotelWidget extends StatelessWidget {
 //==========================================================================
 // NUMBER OF LIST
 //==========================================================================   
-        
         itemCount: hotelList.length,
         scrollDirection: Axis.vertical,
 //==========================================================================

@@ -2,7 +2,7 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
-// import 'package:seedeal01/widgets/ButtonBarWidget.dart';
+import 'package:seedeal01/screens/HotelDetailPage.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/widgets/LVVertSearchHotelWidget.dart';
 
@@ -39,16 +39,36 @@ class _SearchHotelPageState extends State<SearchHotelPage> {
 // HOME
 //==========================================================================
         home: Scaffold(
-            // appBar: AppBar(
-            //   title: Text('Login'),
+//==========================================================================
+// SCAFFOLD / TITLE + BACK
+//========================================================================== 
+            //        appBar: AppBar(
+            //           iconTheme: IconThemeData(color: Colors.black),
+            //           leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white,),
+            //           onPressed: () => Navigator.of(context).pop()),
+            //           centerTitle: true,
+            //           title: Text('Search Hotel'),
             // ),
-
 //==========================================================================
 // BODY
 //==========================================================================
             body: SafeArea(
               child: Column(
                 children: <Widget>[
+//==========================================================================
+// SCAFFOLD / TITLE + BACK
+//========================================================================== 
+                   AppBar(
+                      iconTheme: IconThemeData(color: Colors.black),
+                      leading: IconButton(
+                      icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    ),
+                  onPressed: () => Navigator.of(context).pop()),
+                  centerTitle: true,
+                  title: Text('Search Hotel'),
+            ) ,          
 //==========================================================================
 // HEADER BAR# HEADER
 //==========================================================================
@@ -74,17 +94,15 @@ class _SearchHotelPageState extends State<SearchHotelPage> {
                     Expanded(child: Text(' 2', style: TextStyle(color: Colors.white, fontSize: 12),)),     
                     Text('Modify', style: TextStyle(color: Colors.white, fontSize: 12),),  
                     Icon(Icons.edit,color: Colors.white, size:18),  
-//==========================================================================
-// SIZEDBOX
-//==========================================================================                         
-                                  
                   ],),
                 ) , 
 //==========================================================================
 // LISTVIEW & CARD
 //==========================================================================
                   Expanded(child: Container(
-                    child: LVVertSearchHotelWidget(),
+                    child: LVVertSearchHotelWidget(
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => HotelDetailPage()),);},
+                    ),
                   ))
 
 //==========================================================================
@@ -92,11 +110,6 @@ class _SearchHotelPageState extends State<SearchHotelPage> {
 //==========================================================================
               ],
               ),
-
-         
-
-
-
             )));
   }
 }

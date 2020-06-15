@@ -6,6 +6,7 @@ import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealHotelPage.dart';
+import 'package:seedeal01/screens/SearchHotelPage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:seedeal01/widgets/DatePickerWidget.dart';
 import 'package:seedeal01/widgets/DropdownBarWidget.dart';
@@ -13,15 +14,15 @@ import 'package:seedeal01/widgets/DropdownBarWidget.dart';
 //==========================================================================
 // MAIN CLASS
 //==========================================================================
-class SearchDealPage extends StatefulWidget {
+class SearchDealTrainPage extends StatefulWidget {
   @override
-  _SearchDealPageState createState() => _SearchDealPageState();
+  _SearchDealTrainPageState createState() => _SearchDealTrainPageState();
 }
 
 //==========================================================================
 // STATE CLASS
 //==========================================================================
-class _SearchDealPageState extends State<SearchDealPage> {
+class _SearchDealTrainPageState extends State<SearchDealTrainPage> {
   @override
   Widget build(BuildContext context) {
     // const padding = 15.0;
@@ -53,13 +54,8 @@ class _SearchDealPageState extends State<SearchDealPage> {
 //==========================================================================
           appBar: AppBar(
               iconTheme: IconThemeData(color: Colors.black),
-              leading: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  ),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),)),            
-            title: Text('Search Top Deal: Train'),
+              leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white,),onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),)),            
+              title: Text('Search Top Deal: Train'),
 //==========================================================================
 // APPBAR: BOTTOM
 //==========================================================================
@@ -67,7 +63,7 @@ class _SearchDealPageState extends State<SearchDealPage> {
               onTap: (int index){
                 switch (index) {
                   case 0: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealFlightHotelPage()),);}break;
-                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealPage()),);}break;
+                  case 1: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealTrainPage()),);}break;
                   case 2: {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SearchDealHotelPage()),);}break;              
                   default:
                 }
@@ -181,9 +177,6 @@ class ChoiceCard extends StatelessWidget {
                     ],
                   ),
                 ),
-              
-
-
 //==========================================================================
 // DROPDOWN: NO GUESTS 
 //==========================================================================
@@ -203,7 +196,7 @@ class ChoiceCard extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ButtonBarWidget(
-            onPressed: () {},
+            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SearchHotelPage()),);},
             splashColor: Colors.pink,
             text: "Find",
           ),
