@@ -43,7 +43,8 @@ class _SearchFlightHotelPageState extends State<SearchFlightHotelPage> {
         appBar: AppBar(
               iconTheme: IconThemeData(color: Colors.black),
               leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white,),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),)),          
+                  onPressed: () => Navigator.of(context).pop(),
+                  ),          
           title: Text('Flight and Hotel'),
         ),
         body: buildBody(),
