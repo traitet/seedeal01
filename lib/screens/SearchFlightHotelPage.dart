@@ -3,7 +3,6 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
-import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/screens/SearchHotelPage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 

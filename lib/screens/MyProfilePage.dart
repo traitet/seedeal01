@@ -4,8 +4,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/HomePage.dart';
-import 'package:seedeal01/screens/MainPage.dart';
+import 'package:seedeal01/screens/MorePage.dart';
 import 'package:seedeal01/screens/MyBookingPage.dart';
+import 'package:seedeal01/screens/EditPaymentMethodPage.dart';
+import 'package:seedeal01/screens/TravelBuddiesPage.dart';
+import 'package:seedeal01/screens/LoginPage.dart';
+import 'package:seedeal01/screens/PersonalDetailPage.dart';
+
 
 //==========================================================================
 // MAIN CLASS
@@ -50,7 +55,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}break;
                   case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}break;
                   case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}break;
-                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);}break;                  
+                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()),);}break;                  
                   default:
                 }
               },          
@@ -128,16 +133,16 @@ class _MyProfilePageState extends State<MyProfilePage> {
 //==========================================================================
     Text('My Preferences',style: TextStyle(fontSize: 16,color: Colors.black, fontWeight: FontWeight.bold)),
     SizedBox(height: 5),    
-    ListTile(trailing: Icon(Icons.credit_card),title: Text('Payment Method'),),  
-    ListTile(trailing: Icon(Icons.people),title: Text('Travel Buddy'),),   
+    ListTile(trailing: Icon(Icons.credit_card),title: Text('Payment Method'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => EditPaymentMethodPage()),);},),  
+    ListTile(trailing: Icon(Icons.people),title: Text('Travel Buddy'),onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => TravelBuddiesPage()),);},),
     SizedBox(height: 15),   
 //==========================================================================
 // LIST TILE & TEXT: ACCOUNT SETTING
 //==========================================================================              
     Text('Account Settings',style: TextStyle(fontSize: 16,color: Colors.black, fontWeight: FontWeight.bold)),     
     SizedBox(height: 5),        
-    ListTile(trailing: Icon(Icons.chrome_reader_mode),title: Text('Personal Details & Password'),),  
-    ListTile(trailing: Icon(Icons.exit_to_app),title: Text('Logout'),),         
+    ListTile(trailing: Icon(Icons.chrome_reader_mode),title: Text('Personal Details & Password'),onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PersonalDetailPage()),);},),   
+    ListTile(trailing: Icon(Icons.exit_to_app),title: Text('Logout'),onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()),);},),        
     
 
 

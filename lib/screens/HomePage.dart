@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:seedeal01/screens/HotelDetailPage.dart';
-import 'package:seedeal01/screens/MainPage.dart';
+import 'package:seedeal01/screens/MorePage.dart';
 import 'package:seedeal01/screens/MyBookingPage.dart';
 import 'package:seedeal01/screens/MyProfilePage.dart';
 import 'package:seedeal01/screens/SearchDealFlightHotelPage.dart';
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   case 0: {Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}break;
                   case 1: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyBookingPage()),);}break;
                   case 2: {Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfilePage()),);}break;
-                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);}break;                  
+                  case 3: {Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()),);}break;                  
                   default:
                 }
               },

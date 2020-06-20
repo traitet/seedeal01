@@ -2,7 +2,7 @@
 // IMPORT
 //==========================================================================
 import 'package:flutter/material.dart';
-// import 'package:seedeal01/widgets/ButtonBarWidget.dart';
+import 'package:seedeal01/screens/EditPaymentMethodPage.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 //==========================================================================
@@ -454,7 +454,7 @@ class _HotelDetailPageState extends State<HotelDetailPage> {
                                 ],
                               )),
                         ),
-                        RaisedButton(color:Colors.pink, onPressed: (){}, child: Text('Book Now',style: TextStyle(fontSize: 14, color: Colors.white),))
+                        RaisedButton(color:Colors.pink, onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => EditPaymentMethodPage()),);}, child: Text('Book Now',style: TextStyle(fontSize: 14, color: Colors.white),))
                       ],
                     ),
                   ),
