@@ -3,6 +3,7 @@
 //==========================================================================
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:seedeal01/models/AppConfigModel.dart';
 import 'package:seedeal01/screens/HomePage.dart';
 import 'package:seedeal01/widgets/ButtonBarWidget.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
@@ -61,7 +62,7 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
 //==========================================================================                
                 Center(
                     child: Text('Join us now to discover our hot deals!',
-                        style: TextStyle(fontSize: 18))),
+                    style: AppConfigModel().textStyleM)),
                 SizedBox(height: padding),                        
 //==========================================================================
 // TEXT: LOGIN
@@ -69,7 +70,7 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
                 Center(
                     child: Text(
                   'Login',
-                  style: TextStyle(fontSize: 15),
+                  style: AppConfigModel().textStyleM,
                 )),
                 SizedBox(height: padding),
 //==========================================================================
@@ -111,7 +112,7 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
                 Center(
                     child: Text(
                   "Haven't got an account?",
-                  style: TextStyle(fontSize: 15),
+                  style: AppConfigModel().textStyleM,
                 )),
                 SizedBox(height: padding),
 //==========================================================================
@@ -120,10 +121,7 @@ Image(image: AssetImage('assets/images/welcome.JPG')),
                 FlatButton(
                   onPressed: () {},
                   child: Text('Create an Account',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.blue[800])),
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.blue[800])),
                 ),
               ],
             ),

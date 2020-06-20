@@ -108,11 +108,7 @@ class _PersonalDetailPageState extends State<PersonalDetailPage> {
 //==========================================================================
 // SIGN-IN BUTTON
 //==========================================================================
-                ButtonBarWidget(
-                  onPressed: () {},
-                  splashColor: Colors.pink,
-                  text: "Save",
-                ),
+                ButtonBarWidget(onPressed: () {},splashColor: Colors.pink,text: "Save",),
                 SizedBox(height: padding),
                 SizedBox(height: padding),
               ],

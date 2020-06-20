@@ -16,6 +16,7 @@ import 'package:seedeal01/screens/SearchDealHotelPage.dart';
 import 'package:seedeal01/screens/SearchDealTrainPage.dart';
 import 'package:seedeal01/screens/SearchFlightHotelPage.dart';
 import 'package:seedeal01/screens/SearchHotelPage.dart';
+import 'package:seedeal01/screens/SignUpPage.dart';
 import 'package:seedeal01/screens/TravelBuddiesPage.dart';
 import 'package:seedeal01/screens/loginPage.dart';
 import 'package:seedeal01/screens/HotelDetailPage.dart';
@@ -111,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //==========================================================================
 // RAISED BUTTON
 //========================================================================== 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()),);}, child: Text('Sign Up'),),     
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);}, child: Text('Login'),),      
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);}, child: Text('Home Page'),),  
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchHotelPage()),);}, child: Text('Search Hotel'),),      
